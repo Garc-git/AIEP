@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Ficha Médica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ficha Médica</h1>
+
+    <!-- Formulario de ingreso -->
+    <form id="fichaMedicaForm">
+        <label for="rut">RUT:</label>
+        <input type="text" id="rut" name="rut" required>
+
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+        <label for="estadoCivil">Estado Civil:</label>
+        <select id="estadoCivil" name="estadoCivil" required>
+            <option value="soltero">Soltero</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viudo">Viudo</option>
+        </select>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios"></textarea>
+
+        <!-- Botones -->
+        <button type="button" onclick="guardar()">Guardar</button>
+        <button type="reset">Limpiar</button>
+        <button type="button" onclick="cerrar()">Cerrar</button>
+    </form>
+
+    <!-- Formulario de búsqueda -->
+    <h2>Buscar Usuario por Apellido</h2>
+    <form id="buscarUsuarioForm">
+        <label for="buscarApellido">Apellido:</label>
+        <input type="text" id="buscarApellido" name="buscarApellido" required>
+        <button type="button" onclick="buscarUsuario()">Buscar</button>
+    </form>
+
+    <script>
+        // Función para guardar la ficha médica
+        function guardar() {
+            // Aquí se debe verificar si el registro ya existe y preguntar si desea sobrescribir
+            // Luego de la confirmación, guardar la información
+            alert('Registro guardado correctamente.');
+        }
+
+        // Función para cerrar el formulario
+        function cerrar() {
+            window.close(); // Esta función cerrará la ventana
+        }
+
+        // Función para buscar un usuario por apellido
+        function buscarUsuario() {
+            const apellido = document.getElementById('buscarApellido').value;
+            // Aquí se debe implementar la lógica para buscar el usuario en la base de datos
+            alert('Resultados de la búsqueda para el apellido: ' + apellido);
+        }
+    </script>
+
+</body>
+</html>
